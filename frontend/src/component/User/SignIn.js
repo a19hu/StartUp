@@ -12,7 +12,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-
+import axios from "axios";
 const SignIn = ({ history }) => {
   //google authentication
   const clientId =
@@ -61,8 +61,9 @@ const SignIn = ({ history }) => {
 
   const loginSubmit = (e) => {
     e.preventDefault();
+    console.log(loginEmail, loginPassword);
     dispatch(login(loginEmail, loginPassword));
-    console.log("dispatch", dispatch(login(loginEmail, loginPassword)));
+    // console.log("dispatch", dispatch(login(loginEmail, loginPassword)));
   };
 
   const registerSubmit = (e) => {
@@ -74,7 +75,11 @@ const SignIn = ({ history }) => {
     myForm.set("mobile", mobile);
     myForm.set("email", email);
     myForm.set("password", password);
-    dispatch(register(myForm));
+    console.log('my fornmhs',myForm.get('name'));
+    // dispatch(register(myForm));
+    // axios.post("http://localhost:5000/api/v1/register", myForm).then((res) => {
+    //   console.log(res);
+    // })
   };
 
   const registerDataChange = (e) => {

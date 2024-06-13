@@ -4,7 +4,7 @@ import CartItemCard from "./CardItemCard";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
 import { Typography } from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+// import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
 import { clearErrors } from "../../actions/userActions";
 import { useAlert } from "react-alert";
@@ -67,7 +67,7 @@ const Cart = () => {
         <Fragment>
           {cartItems.length === 0 ? (
             <div className="emptyCart">
-              <RemoveShoppingCartIcon />
+              {/* <RemoveShoppingCartIcon /> */}
 
               <Typography>No Product in Your Cart</Typography>
               <Link to="/products">View Products</Link>
